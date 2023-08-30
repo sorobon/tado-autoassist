@@ -17,7 +17,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ietz/tado-autoassist
+          images: sorobon/tado-autoassist
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -52,5 +52,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=ietz/tado-autoassist:latest
+          cache-from: type=registry,ref=sorobon/tado-autoassist:latest
           cache-to: type=inline
